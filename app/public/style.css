@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+main{
+    padding: 20px 20px;
+    background: linear-gradient(to left, rgb(241, 222, 51), rgb(96, 49, 204));
+}
+h2{
+    text-align: center;
+}
+
+input{
+    height: 25px;
+}
+
+input, textarea{
+    border: 1px solid rgb(161, 131, 131);
+    border-radius: 5px;
+}
+
+/*Header*/
+.header{
+    height: 70px;
+    display: flex;
+    position: -webkit-sticky; /*para que funcione en el navegador*/
+    position: sticky; 
+    top: 0;
+    opacity: 1;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.8) !important; /*es clave para el color*/
+}
+
+.header__caja--uno{
+    width: 200px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/*.header__caja{
+    background-color: cyan;
+}*/
+
+.header__caja--uno img{
+    width: 100%;
+}
+
+.header__caja--dos{
+    display: block;
+    margin: auto;
+}
+
+.header__caja--dos h1{
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+}
+
+/*--fin header--*/
+
+/*formulario*/
+.form{
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 290px 10px;
+    grid-template-areas: "datos calculo"
+                            "boton  boton";
+}
+
+/*datos*/
+.formulario__caja--datos{
+    grid-area: datos;
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: 10% 20% 20% 50%;
+    grid-template-areas: "titulo titulo" 
+                        "nombre apellido"
+                        "dni mes"
+                        "comentario comentario";
+}
+
+.form__dato--titulo{
+    grid-area: titulo;
+    display: block;
+    margin: auto;
+}
+
+.form__dato{
+    margin: 0 20px 0 20px;
+}
+
+.form__dato--cinco{
+    margin-top: 5px;
+}
+
+.form__dato label, input{
+    display: block;
+    width: 100%;
+}
+
+.form__dato--cuatro select{
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(144, 125, 125);
+}
+
+/*operaciones*/
+.formulario__caja--operacion{
+    grid-area: calculo;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 20% 20% 20% 20%;
+    width: 60%;
+    margin: 0 15% 0 20%;
+    border: 2px solid rgb(30, 29, 82);
+    border-radius: 5px;
+    background-color: rgb(218, 218, 20);
+}
+
+.form__operacion--titulo{
+    text-align: center;
+}
+
+.form__operacion{
+    margin: 0 20% 0 20%;
+}
+
+/*boton*/
+.formulario__caja--boton{
+    grid-area: boton;
+    height: 100px;
+}
+
+.form__boton{
+    margin-top: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form__boton--uno button{
+    padding: 0.5%;
+    color: #fff;
+    background-color: rgb(33, 29, 63);
+    border: 1px solid rgb(119, 101, 101);
+    border-radius: 5px;
+}
+
+/*--fin de formulario--*/
+
+/*Lista de personas*/
+
+.lista{
+    
+    text-align: center;
+    margin: 30px 0;
+    /* display: none; */
+}
+
+.lista__contenedor select{
+    margin-top: 10px;
+    width: 15%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(144, 125, 125);
+}
+
+.lista__contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cargar{
+    margin-top: 10px;
+    padding: 0.5%;
+    color: #fff;
+    background-color: rgb(33, 29, 63);
+    border: 1px solid rgb(119, 101, 101);
+    border-radius: 5px;
+}
+
+
+/*recibo haberes*/
+
+.recibos{
+    margin: auto;
+    display: block;
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid rgb(18, 19, 13);
+    background-color: rgb(221, 240, 239);
+}
+
+.recibo__hecho{
+    margin: 20px;
+}
+
+.datos__cargados{
+    border-top:2px solid rgb(29, 36, 68) ;
+    border-bottom:2px solid rgb(29, 36, 68) ;
+}
+
+.dato__cargado{
+    display: flex;
+}
+
+.dato__cargado--cuatro{
+    margin-bottom: 10px;
+}
+
+.dato__cargado--uno{
+    margin-top: 10px;
+}
+
+.dato__cargado p{
+    margin-right: 15px;
+}
+
+
+.conceptos__cargados{
+    margin-top: 20px;
+}
+
+.nombre_concepto{
+    border-bottom: 1px solid black;
+}
+
+.concepto__fila{
+    display: grid;
+    grid-template-columns: 50% 20% 30%;
+}
+
+.basico{
+    margin-top: 10px;
+}
+
+.total{
+    border-top: 1px solid black ;
+    margin-top: 10px;
+}
+
+.fila__dos{
+    text-align: right;
+}
+
+.fila__tres{
+    text-align: right;
+}
+
+/*--fin recibo--*/
+
+/*footer*/
+.footer{
+    background-color: #000;
+    color: #fff;
+}
+
+.footer--uno{
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.footer--uno h3{
+    font-weight: 500;
+}
+
+.footer--dos{
+    height: 30px;
+    display: block;
+    margin: auto;
+    width: 80%;
+    border-top: 1px solid #fff;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+
+/*---MEDIA QUERY 1200 - 768---*/
+@media screen and (min-width: 768px) and (max-width: 1200px){
+
+    /*header*/
+    h1, h2{
+        font-size: 1.5em;
+    }
+
+    .header__caja--uno{
+        width: 150px;
+    }
+
+    .header__caja--uno img{
+        width: 100%;
+    }
+
+    /*recibo*/
+    .recibos{
+        width: 80%;
+    }
+
+    .recibo__hecho{
+        margin: 10px;
+    }
+
+    .footer--uno, .footer--dos{
+        font-size: 70%;
+    }
+
+    .lista__contenedor select{
+        width: 30%;
+    }
+
+
+}
+
+
+
+/*---MEDIA QUERY 767---*/
+@media screen and (max-width: 767px){
+
+    /*header*/
+    h1, h2, h3{
+        font-size: 1em;
+    }
+
+    .header__caja--uno{
+        width: 100px;
+    }
+
+    .header__caja--uno img{
+        width: 100%;
+    }
+
+    /*formulario*/
+    .form{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 290px 290px 10px ;
+        grid-template-areas: "datos"
+                                "operacion"
+                                "boton";
+    }
+
+    .formulario__caja--datos{
+        grid-area: datos;
+    }
+
+    .formulario__caja--operacion{
+        grid-area: operacion;
+    }
+
+    .formulario__caja--boton{
+        grid-area: boton;
+    }
+
+    /*recibo*/
+    .recibos{
+        width: 85%;
+    }
+
+    .recibo__hecho{
+        margin: 5px;
+    }
+
+    .footer--uno, .footer--dos{
+        font-size: 50%;
+    }
+
+    .lista__contenedor select{
+        width: 50%;
+    }
+}

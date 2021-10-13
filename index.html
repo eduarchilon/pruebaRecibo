@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app/public/style.css">
+    <title>Proyecto Final!</title>
+    
+</head>
+<body>
+    <!--HEADER-->
+    <header class="header">
+        <div class="header__caja header__caja--uno">
+            <img src="app/public/logo.png" alt="logo">
+        </div>
+        <div class="header__caja  header__caja--dos">
+            <h1>Generador de recibos</h1>
+        </div>
+    </header>
+
+    <!--MAIN-->
+    <main>
+        <h3>Generador de recibos del personal</h3>
+
+        <!--formulario-->
+        <form id="formulario">
+            <div class="form">
+                <!--datos-->
+                <div class="form__caja formulario__caja--datos">
+                    <div class="form__dato--titulo">
+                        <h3>Datos</h3>
+                    </div>
+                    <div class="form__dato form__dato--uno">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre">
+                    </div>
+                    <div class="form__dato form__dato--dos">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido">
+                    </div>
+                    <div class="form__dato form__dato--tres">
+                        <label for="dni">DNI</label>
+                        <input type="number" name="" id="dni">
+                    </div>
+                    <div class="form__dato form__dato--cuatro">
+                        <label for="mes">Mes</label>
+                        <select name="mes" id="mes">
+                            <option value="">Seleccionar mes</option>
+                            <option value="Enero">Enero</option>
+                            <option value="Febrero">Febrero</option>
+                            <option value="Marzo">Marzo</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Mayo">Mayo</option>
+                            <option value="Junio">Junio</option>
+                            <option value="Julio">Julio</option>
+                            <option value="Agosto">Agosto</option>
+                            <option value="Septiembre">Septiembre</option>
+                            <option value="Octubre">Octubre</option>
+                            <option value="Noviembre">Noviembre</option>
+                            <option value="Diciembre">Diciembre</option>
+                        </select>
+                    </div>
+                    <div class="form__dato form__dato--cinco">
+                        <label for="concepto">Aclaración/Concepto</label>
+                        <textarea name="aclaracion" id="concepto" cols="40" rows="4"></textarea>
+                    </div>
+                </div>
+                <!--operacion-->
+                <div class="formulario__caja formulario__caja--operacion">
+                    <div class="form__operacion--titulo">
+                        <h3>Calculos</h3>
+                    </div>
+                    <div class="form__operacion form__operacion--uno">
+                        <label for="basico">Salario básico</label>
+                        <input type="number" name="" id="basico" step="any" >
+                    </div>
+                    <div class="form__operacion form__operacion--dos">
+                        <label for="descuento">Descuento</label>
+                        <input type="number" name="" id="descuento" step="any" >
+                    </div>
+                    <div class="form__operacion form__operacion--tres">
+                        <label for="feriado">Plus Feriado</label>
+                        <input type="number" name="" id="feriado" step="any" >
+                    </div>
+                    <div class="form__operacion form__operacion--cuatro">
+                        <label for="bono">Bonos/Premios</label>
+                        <input type="number" name="" id="bono" step="any" >
+                    </div>
+                </div>
+                </div>
+                <!--boton-->
+                <div class="formulario__caja formulario__caja--boton">
+                    <div class="form__boton form__boton--titulo">
+                        <p>Si esta todo listo, presione aquí</p>
+                    </div>
+                    <div class="form__boton form__boton--uno">
+                        <button type="submit" class="procesar" id="procesar">Procesar Datos</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!--Lista de Personas-->
+        <!-- <div id="lista" class="lista">
+            <h4>Revisar Datos</h4>
+            <div class="lista__contenedor">
+                <select class="list" name="" id="list">
+                    <option value="">Seleccionar Persona</option>
+                </select>
+                <select class="list" name="" id="list">
+                    <option value="">Seleccionar Mes</option>
+                </select>
+            </div>
+            <div class="lista__boton">
+                <button type="button" class="cargar" id="cargar">Cargar Datos</button>
+            </div>
+        </div> -->
+
+
+        <!--recibos-->
+        <h2>Recibos</h2>
+        <div class="recibos" id="recibos">
+            <div id="recib">
+                
+            </div>
+            <!-- <div class="recibo__hecho">
+                <h4>Mes</h4>
+                <div class="datos__cargados">
+                    <div class="dato__cargado dato__cargado--uno">
+                        <p>Nombre:</p>
+                        <p>Eduar</p>
+                    </div>
+                    <div class="dato__cargado dato__cargado--dos">
+                        <p>Apellido:</p>
+                        <p>Chilon Cruz</p>
+                    </div>
+                    <div class="dato__cargado dato__cargado--tres">
+                        <p>D.N.I.:</p>
+                        <p>94.221.723</p>
+                    </div>
+                    <div class="dato__cargado dato__cargado--cuatro">
+                        <p>Concepto:</p>
+                        <p>Recibo del mes de Abril</p>
+                    </div>
+                </div>
+                <div class="conceptos__cargados">
+                    <div class="concepto__fila nombre_concepto">
+                        <h5 class="fila__uno">Concepto</h5>
+                        <h5 class="fila__dos">Cantidad</h5>
+                        <h5 class="fila__tres">Saldo</h5>
+                    </div>
+                    <div class="concepto__fila basico">
+                        <p class="fila__uno">Sueldo básico</p>
+                        <p class="fila__dos">30</p>
+                        <p class="fila__tres">$10.000</p>
+                    </div>
+                    <div class="concepto__fila faltados">
+                        <p class="fila__uno">Descuento</p>
+                        <p class="fila__dos"></p>
+                        <p class="fila__tres">$7.500</p>
+                    </div>
+                    <div class="concepto__fila plus">
+                        <p class="fila__uno">Plus feriado</p>
+                        <p class="fila__dos"></p>
+                        <p class="fila__tres">$2.500</p>
+                    </div>
+                    <div class="concepto__fila bono">
+                        <p class="fila__uno">Bonos / premios</p>
+                        <p class="fila__dos"></p>
+                        <p class="fila__tres">$6.000</p>
+                    </div>
+                    <div class="concepto__fila total">
+                        <h5 class="fila__uno">Total</h5>
+                        <p class="fila__dos"></p>
+                        <h5 class="fila__tres">$15.000</h5>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </main>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer--uno">
+            <h3>Proyecto hecho por: Eduar Chilon Cruz</h3>
+        </div>
+        <div class="footer--dos">
+            <p>Coderhouse.com</p>
+        </div>
+    </footer>
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app/app.js" type="module"></script>
+</body>
+</html>
