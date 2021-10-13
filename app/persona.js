@@ -1,102 +1,115 @@
 export default class Persona{
-    constructor(nombre, apellido, dni){
-        this._nomb = nombre.toUpperCase();
-        this._apell = apellido.toUpperCase();
-        this._dni = parseInt(dni);
-        this._mes = new Array(12);
-    }
+  constructor(nombre, apellido, dni){
+      this._nomb = nombre.toUpperCase();
+      this._apell = apellido.toUpperCase();
+      this._dni = parseInt(dni);
+      this._sueldos = [];
+  }
 
-    set nombre(n){
-        this._nomb = n.toUpperCase();
-    }
+  set nombre(n){
+      this._nomb = n.toUpperCase();
+  }
 
-    set apellido(apell){
-        this._apell = apell.toUpperCase();
-    }
+  set apellido(apell){
+      this._apell = apell.toUpperCase();
+  }
 
-    set dni(d){
-        this._dni = parseInt(d);
-    }
+  set dni(d){
+      this._dni = parseInt(d);
+  }
 
-    get nombre(){
-        return this._nomb;
-    }
+  get nombre(){
+      return this._nomb;
+  }
 
-    get apellido(){
-        return this._apell;
-    }
+  get apellido(){
+      return this._apell;
+  }
 
-    get dni(){
-        return this._dni;
-    }
+  get dni(){
+      return this._dni;
+  }
 
-    toString(){
-        let texto = "Nombre y Apellido: " + this._nomb + " " + this._apell + ", DNI: " + this._dni
-        return texto;
-    }
+  toString(){
+      let texto = "Nombre y Apellido: " + this._nomb + " " + this._apell + ", DNI: " + this._dni
+      return texto;
+  }
 
-    asignarSueldo(nombreMes, cant) {
+  asignarSueldo(mes, cant){
       let cantidad = parseFloat(cant);
-        switch (nombreMes) {
-          case "Enero":
-            this._mes[0] = { mes: nombreMes, salario: cantidad };
-            // console.log(this._mes[0].mes)
-            break;
-          case "Febrero":
-            this._mes[1] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Marzo":
-            this._mes[2] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Abril":
-            this._mes[3] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Mayo":
-            this._mes[4] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Junio":
-            this._mes[5] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Julio":
-            this._mes[6] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Agosto":
-            this._mes[7] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Septiembre":
-            this._mes[8] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Octubre":
-            this._mes[9] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Noviembre":
-            this._mes[10] = { mes: nombreMes, salario: cantidad };
-            break;
-          case "Diciembre":
-            this._mes[11] = { mes: nombreMes, salario: cantidad };
-            break;
-          default:
-            break;
-        }
+      let nombreMes = "";
+      switch (mes) {
+        case 1:
+          this._sueldos[0] = { mes: "Enero", salario: cantidad };
+          // console.log(this._sueldos[0].mes)
+          break;
+        case 2:
+          this._sueldos[1] = { mes: "Febrero", salario: cantidad };
+          break;
+        case 3:
+          this._sueldos[2] = { mes: "Marzo", salario: cantidad };
+          break;
+        case 4:
+          this._sueldos[3] = { mes: "Abril", salario: cantidad };
+          break;
+        case 5:
+          this._sueldos[4] = { mes: "Mayo", salario: cantidad };
+          break;
+        case 6:
+          this._sueldos[5] = { mes: "Junio", salario: cantidad };
+          break;
+        case 7:
+          this._sueldos[6] = { mes: "Julio", salario: cantidad };
+          break;
+        case 8:
+          this._sueldos[7] = { mes: "Agosto", salario: cantidad };
+          break;
+        case 9:
+          this._sueldos[8] = { mes: "Septiembre", salario: cantidad };
+          break;
+        case 10:
+          this._sueldos[9] = { mes: "Octubre", salario: cantidad };
+          break;
+        case 11:
+          this._sueldos[10] = { mes: "Noviembre", salario: cantidad };
+          break;
+        case 12:
+          this._sueldos[11] = { mes: "Diciembre", salario: cantidad };
+          break;
+        default:
+          break;
       }
-      
-      verSueldo(m){
-        let mes = this._mes.find(elemento => elemento.mes == m);
-        return mes;
-      }
+  }
 
-      verTotalSalarios(){
-        let resultado = 0;
-        let numero = 0;
-        for(let i = 0; i<12; i++){
-            if(this._mes[i]!=null){
-          numero = this._mes[i].salario;
-          resultado += numero;
-            }
-        }
-        return resultado;
+  verSueldo(m){
+    let resultado;
+      if(this._sueldos[m-1]?.salario){
+        resultado = this._sueldos[m-1].salario;
+      }else{
+        resultado = "Sueldo no asignado";
       }
+    return resultado;
+  }
+
+
+  // verSueldo(m){
+  //     let a ="";
+  //     if(this._sueldos.salario == undefined){
+  //         a = this._sueldos.find(elemento => elemento.mes == m);
+  //     }
+  //     return a;
+  //   }
+
+  verTotalSalarios(){
+      let resultado = 0;
+      let numero = 0;
+      for(let i = 0; i<12; i++){
+          if(this._sueldos[i]!=null){
+        numero = this._sueldos[i].salario;
+        resultado += numero;
+          }
+      }
+      return resultado;
+    }
+
 }
-
-
-

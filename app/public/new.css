@@ -1,0 +1,42 @@
+body{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto auto;
+    font-size: 16px;
+}
+
+input, select, option, button{
+    font-size: 0.8em;
+}
+
+
+.container{
+    margin: 50px;
+    border: 2px solid black;
+    padding: 20px;
+    height: fit-content;
+}
+
+.resultado{
+    margin-top: 20px;
+    border: 2px solid black;
+    padding: 20px;
+    height: fit-content;
+    grid-row: 2/2;
+    grid-column: 1/2;
+}
+
+#recibo, #agregar{
+    display: none;
+    margin: auto;
+}
+
+.contenedor__lista{
+    display: none;
+    margin: auto;
+}
+
+.contenedor__mes{
+    display: none;
+    margin: auto;
+}
