@@ -83,8 +83,8 @@ $(document).ready(function(){
               </div>
               </div>
             `);
-            $('.titulo-recibo').show();
-            $('#recibo').show();
+            $('.titulo-recibo').fadeIn("slow");
+            $('#recibo').fadeIn("slow");
          /*creo mi obejto de datos para guardar en el storage despues*/
          let datos = {persona: new Persona(nombre, apellido, dni),
             mes: mes,
@@ -117,9 +117,9 @@ $(document).ready(function(){
             $('#recibo').hide();
             $('#agregar').hide();
         }else{
-            $('#recibo').show();
+            $('#recibo').fadeIn("slow");
             /*para que muestre el boton de agregar a la lista*/
-            $('#agregar').show();
+            $('#agregar').fadeIn("slow");
             
         }    
     }
@@ -245,8 +245,8 @@ $(document).ready(function(){
               </div>
               </div>
             `);
-            $('.titulo-recibo').show();
-            $('#recibo').show();
+            $('.titulo-recibo').fadeIn("slow");
+            $('#recibo').fadeIn("slow");
             // console.log(personas[i].persona._sueldos[i].salario);
             // console.log(personas.length)
         }else{
