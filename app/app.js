@@ -1,8 +1,25 @@
 import Persona from "./persona.js";
 
+/*mi ruta de json*/
+const URLJSON = "app/data/datos.json";
+
+/*fnciones con js*/
+
 $(document).ready(function(){
     /*cargo el DOM*/
     console.log("El DOM esta listo");
+
+    /*cargo los archivos de mi json a la lista de personas*/
+    $.getJSON(URLJSON, function(respuesta, estado){
+        if(estado==="success"){
+            let misDatos = respuesta;
+            for(const dato of misDatos){
+                $('#lista').append(`
+                <option value="${dato.dni}" id="${dato.dni}">${dato.nombre} ${dato.apellido}</option>
+        `)
+            }
+        }
+    })
 
     /*creo la primera funcion perteneciente al formulario*/
     $('#form').submit(function(e){
@@ -153,7 +170,24 @@ $(document).ready(function(){
 
     $('#btn-c').click(function(){
         /*(333) llamo a la funcion*/
-
+        let personas = []
+        $.getJSON(URLJSON, function(respuesta, estado){
+            if(estado==="success"){
+                let misDatos = respuesta;
+                for(const dato of misDatos){
+                    let datos = {persona: new Persona(dato.nombre, dato.apellido, dato.dni),
+                        mes: dato.mes,
+                        basico: dato.basico,
+                        descuento: dato.descuento,
+                        bono:dato.bono,
+                        total:dato.total
+                     }
+                     datos.persona.asignarSueldo(dato.numMes, dato.total)
+                    personas.push(datos);
+                    localStorage.setItem('personas', JSON.stringify(personas));
+                }
+            }
+        });
         $('.contenedor__mes').show();
         
     })

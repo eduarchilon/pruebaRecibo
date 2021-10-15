@@ -1,0 +1,42 @@
+[
+{"nombre":"Eduar", 
+    "apellido": "Chilon",
+    "dni": 94221723,
+    "mes": "Enero",
+    "numMes": 1,
+    "basico": 15000.00,
+    "descuento": 500.00,
+    "bono":1500.00,
+    "total": 16000.00
+},
+{"nombre":"Cristian", 
+    "apellido": "Chilon",
+    "dni": 94220741,
+    "mes": "Febrero",
+    "numMes": 2,
+    "basico": 16000.00,
+    "descuento": 600.00,
+    "bono":1600.00,
+    "total": 17000.00
+},
+{"nombre":"Luis", 
+    "apellido": "Cruz",
+    "dni": 35856514,
+    "mes": "Marzo",
+    "numMes": 3,
+    "basico": 14000.00,
+    "descuento": 400.00,
+    "bono":1400.00,
+    "total": 14000.00
+},
+{"nombre":"Fernando", 
+    "apellido": "Leguizamon",
+    "dni": 36548565,
+    "mes": "Abril",
+    "numMes": 4,
+    "basico": 13000.00,
+    "descuento": 300.00,
+    "bono":1300.00,
+    "total": 14000.00
+}
+]
