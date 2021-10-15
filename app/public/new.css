@@ -1,16 +1,265 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+main{
+    padding: 0 50px;
+    /* background: linear-gradient(to left, rgb(241, 222, 51), rgb(96, 49, 204)); */
+    background-image: url(fondo.jpg);
+    min-height: 100%;
+    background-size: cover; 
+    z-index: -1;
+}
+
+h2{
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+label{
+    display: block;
+}
+
+input{
+    height: 25px;
+}
+
+button{
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: blue;
+    color: cornsilk;
+    font-weight: bold;
+}
+
+select{
+    height: 25px;
+    width: 165px;
+}
+input, select{
+    border: 1px solid rgb(161, 131, 131);
+    border-radius: 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
+
+/*Header*/
+.header{
+    height: 70px;
+    display: flex;
+    position: -webkit-sticky; /*para que funcione en el navegador*/
+    position: sticky; 
+    top: 0;
+    opacity: 1;
+    z-index: 1111;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.8) !important; /*es clave para el color*/
+}
+
+.header__caja--uno{
+    width: 200px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/*.header__caja{
+    background-color: cyan;
+}*/
+
+.header__caja--uno img{
+    width: 100%;
+}
+
+.header__caja--dos{
+    display: block;
+    margin: auto;
+}
+
+.header__caja--dos h1{
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+}
+
+/*--fin header--*/
+
+/*--MAIN-*/
+main{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: auto auto;
-    font-size: 16px;
+    grid-template-columns: 50% 2% 48%;
+    grid-template-rows: 100px 400px 10px 350px;
+    grid-template-areas: "titulo titulo titulo"
+                        "formulario formulario historial"
+                        "t-recibo t-recibo t-recibo"
+                        "recibo recibo recibo";
 }
 
-input, select, option, button{
-    font-size: 0.8em;
+
+.titulo-recibo{
+    grid-area: t-recibo;
+    margin: auto;
+    display: block;
+    color: #fff;
+    font-weight: 500;
+}
+
+.contenedor__titulo{
+    grid-area: titulo;
+    color: #fff;
+    font-weight: 500;
+}
+
+.contenedor__formulario{
+    grid-area: formulario;
+    /* opacity: 1; */
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgb(91, 109, 192);
+    opacity: 0.9;
+}
+
+.contenedor__historial{
+    grid-area: historial;
+    height: 309px;
+    border: 2px solid black;
+    border-radius:5px ;
+    padding: 20px;
+    margin-left: 50px;
+    text-align: center;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgb(192, 207, 126);
+    opacity: 0.9;
 }
 
 
-.container{
+.contenedor__resultado{
+    grid-area: recibo
+}
+/*--fin del main---*/
+
+/*formulario*/
+.contenedor__formulario{
+    display: grid;
+    grid-template-columns: 48% 2% 48%;
+    grid-template-rows:250px auto;
+    grid-template-areas: "datos a calculadora"
+                        "boton boton boton";
+    /* align-items:stretch ; */
+    border: 2px solid black;
+    border-radius:5px ;
+    padding: 20px;
+}
+
+.contenedor__datos{
+    grid-area: datos;
+    
+}
+
+
+.contenedor__calculadora{
+    grid-area: calculadora;
+    
+    
+}
+
+.contenedor__procesar{
+    grid-area: boton;
+    text-align: center;
+    margin: auto;
+   
+}
+
+
+/*fin formulario*/
+
+/*historial*/
+.contenedor__historial{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 5% 30% 30%;
+    grid-template-areas: "titulo-h titulo-h"
+                        "agregar agregar"
+                        "lista mes";
+}
+
+.contenedor__titulo--historial{
+    grid-area: titulo-h;
+    display: block;
+    margin: auto;
+}
+
+.contenedor__agregar{
+    grid-area: agregar;
+    display: block;
+    margin: auto;
+}
+
+.contenedor__lista{
+    grid-area: lista;
+    display: block;
+    margin: auto;
+}
+
+.contenedor__mes{
+    grid-area: mes;
+    display: block;
+    margin: auto;
+}
+
+/*fin historial
+
+
+/*--recibo--*/
+
+/*fin recibo-*/
+
+
+
+/*footer*/
+.footer{
+    background-color: #000;
+    color: #fff;
+}
+
+
+.footer--uno{
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.footer--uno h3{
+    font-weight: 500;
+}
+
+.footer--dos{
+    height: 30px;
+    display: block;
+    margin: auto;
+    width: 80%;
+    border-top: 1px solid #fff;
+    line-height: 30px;
+    text-align: center;
+}
+/*--fin footer*/
+
+/*amnteroir*/
+/* .container{
     margin: 50px;
     border: 2px solid black;
     padding: 20px;
@@ -24,19 +273,103 @@ input, select, option, button{
     height: fit-content;
     grid-row: 2/2;
     grid-column: 1/2;
-}
+} */
 
-#recibo, #agregar{
-    display: none;
+
+.recibos{
+    grid-area: recibo;
+    width: 80%;
     margin: auto;
+    display: block;
 }
 
-.contenedor__lista{
-    display: none;
-    margin: auto;
+.recibo__hecho{
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(219, 142, 243, 0.8); 
+    opacity: 0.7;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto ;
+    grid-template-areas: "mes"
+                        "datos"
+                        "conceptos";
 }
 
-.contenedor__mes{
+.mes__cargados{
+    grid-area: mes;
+    border-bottom: 2px solid black;
+   
+}
+
+.datos__cargados{
+    grid-area: datos;
+    border-bottom: 1px solid black;
+   
+}
+
+.conceptos__cargados{
+    grid-area: conceptos;
+    border-bottom: 2px solid black;
+}
+
+.dato__cargado{
+    display: flex;
+    
+}
+
+.dato__cargado p{
+    margin-right: 10px;
+    
+}
+
+.conceptos__cargados{
+    
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "concepto"
+                        "name"
+                        "bas"
+                        "desc"
+                        "bon"
+                        "tot";
+}
+
+.concepto__fila{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.nombre_concepto{
+    grid-area: concepto;
+    border-bottom: 2px solid black;
+}
+
+.basico{
+    grid-area: name;
+}
+
+.descuento{
+    grid-area: bas;
+}
+
+.bono{
+    grid-area: bon;
+}
+
+.total{
+    grid-area: tot;
+}
+
+
+/*--fin recibo--*/
+
+.titulo-recibo, #recibo{
     display: none;
     margin: auto;
 }

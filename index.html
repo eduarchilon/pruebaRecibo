@@ -8,72 +8,90 @@
     <title>Proyecto JS - Coderhouse</title>
 </head>
 <body>
-    
+    <!--HEADER-->
+    <header class="header">
+      <div class="header__caja header__caja--uno">
+          <img src="app/public/logo.png" alt="logo">
+      </div>
+      <div class="header__caja  header__caja--dos">
+          <h1>Generador de recibos</h1>
+      </div>
+  </header>
+  <!--fin header-->
+
+  <main>
+    <h2 class="contenedor__titulo">Generador de recibos de personal</h2>
 
     <!--Formulario-->
-    <div class="contenedor__formulario container">
     <form action="" id="form">
-  
-      <!--datos-->
-      <div>
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre">
-      </div>
-      <div>
-        <label for="apellido">Apellido</label>
-        <input type="text" id="apellido">
-      </div>
-      <div>
-        <label for="dni">DNI</label>
-        <input type="text" id="dni">
-      </div>
-      <div>
-        <h3>Mes</h3>
-        <select name="mes" id="mes">
-          <option disabled selected>Seleccionar mes</option>
-          <option value="1">Enero</option>
-          <option value="2">Febrero</option>
-          <option value="3">Marzo</option>
-          <option value="4">Abril</option>
-          <option value="5">Mayo</option>
-          <option value="6">Junio</option>
-          <option value="7">Julio</option>
-          <option value="8">Agosto</option>
-          <option value="9">Septiembre</option>
-          <option value="10">Octubre</option>
-          <option value="11">Noviembre</option>
-          <option value="12">Diciembre</option>
-        </select>
-      </div>
-  
-  
-      <!--calculo-->
-      <div class="contenedor__calculo">
-        <div>
-          <h4>Basico</h4>
-          <input type="number" id="basico">
+      <div class="contenedor__formulario container">
+        <!--datos-->
+        <div class="contenedor__datos">
+          <h3>Formulario de datos</h3>
+          <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre">
+          </div>
+          <div>
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido">
+          </div>
+          <div>
+            <label for="dni">DNI</label>
+            <input type="text" id="dni">
+          </div>
+          <div>
+            <h5>Mes</h5>
+            <select name="mes" id="mes">
+              <option disabled selected>Seleccionar mes</option>
+              <option value="1">Enero</option>
+              <option value="2">Febrero</option>
+              <option value="3">Marzo</option>
+              <option value="4">Abril</option>
+              <option value="5">Mayo</option>
+              <option value="6">Junio</option>
+              <option value="7">Julio</option>
+              <option value="8">Agosto</option>
+              <option value="9">Septiembre</option>
+              <option value="10">Octubre</option>
+              <option value="11">Noviembre</option>
+              <option value="12">Diciembre</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <h4>Descuento</h4>
-          <input type="number" id="descuento">
+    
+        <!--calculo-->
+        <div class="contenedor__calculadora ">
+          <h3>Calculadora</h3>
+          <div>
+            <label for="basico">Sueldo Básico</label>
+            <input type="number" id="basico">
+          </div>
+          <div>
+            <label for="descuento">Descuento</label>
+            <input type="number" id="descuento">
+          </div>
+          <div>
+            <label for="bono">Bono / Premio</label>
+            <input type="number" id="bono">
+          </div>
         </div>
-        <div>
-          <h4>Bono</h4>
-          <input type="number" id="bono">
+    
+        <!--boton-->
+        <div class="contenedor__procesar a">
+          <h4>¿Desea procesar?</h4>
+          <button type="submit" id="btn-a">Procesar</button>
         </div>
-      </div>
-  
-      <!--boton-->
-      <div>
-        <h4>¿Desea procesar?</h4>
-        <button type="submit" id="btn-a">Procesar</button>
+
       </div>
     </form>
-    </div>
-    <!--Fin formulario-->
-
-    <!--Boton de agregar personas a la lista-->
-    <div class="contenedor__agregar" id="agregar">
+      <!--Fin formulario-->
+  
+      <!--Historial-->
+      <div class="contenedor__historial">
+        <h3 class="contenedor__titulo--historial">Historial de recibos</h3>
+        <!--Boton de agregar personas a la lista-->
+      <div class="contenedor__agregar" id="agregar">
         <h4>¿Desea agregar a la lista?</h4>
         <button type="button" id="btn-b">Agregar</button>
     </div>
@@ -120,21 +138,37 @@
         <button type="button" id="btn-d">OK</button>
     </div>
     </div>
+      </div>
+      
+  
+      <!--Resultado-->
+      <h2 class="titulo-recibo">Recibo</h2>
+        <div class="recibos" id="recibos">
+          <div class="contenedor__resultado resultado recibos" id="recibo">
+            
+          </div>
+        </div>
+          <!-- <h5>Mes:</h5>
+          <p>Nombre:</p>
+          <p>Apellido:</p>
+          <p>Dni:</p>
+          <p>Basico:</p>
+          <p>Descuento:</p>
+          <p>Bono:</p>
+          <p>Total:</p>-->
+       
+  </main>
     
 
-    <!--Resultado-->
-    <div class="contenedor__resultado resultado" id="recibo">
-        <!-- <h5>Mes:</h5>
-        <p>Nombre:</p>
-        <p>Apellido:</p>
-        <p>Dni:</p>
-        <p>Basico:</p>
-        <p>Descuento:</p>
-        <p>Bono:</p>
-        <p>Total:</p> -->
-    </div>
-    <!--Fin del resultado-->
-
+<!--Footer-->
+<footer class="footer">
+  <div class="footer--uno">
+      <h3>Proyecto hecho por: Eduar Chilon Cruz</h3>
+  </div>
+  <div class="footer--dos">
+      <p>Coderhouse.com</p>
+  </div>
+</footer>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

@@ -38,16 +38,53 @@ $(document).ready(function(){
          /*es mucho mejor html para reemplazar -
          y de paso lo veo en el html lo capturado */
          $('#recibo').html(`
-         <h5>Mes: <h5 id="rmes">${mes}</h5></h5>
-         <p>Nombre: <p id="rnombre">${nombre}</p></p>
-         <p>Apellido: <p id="rapellido">${apellido}</p></p>
-         <p>Dni: <p id="rdni">${dni}</p></p>
-         <p>Basico:$ <p id="rbasico">${basico}</p></p>
-         <p>Descuento: -$<p id="rdescuento">${descuento}</p></p>
-         <p>Bono:+$<p id="rbono">${bono}</p></p>
-         <p>Total:$ <p id="rtotal">${total}</p></p>
-         `);
-
+            <div class="recibo__hecho">
+            <h4id="rmes">${mes}</h4>
+                <div class="datos__cargados">
+                    <div class="dato__cargado dato__cargado--uno">
+                        <p>Nombre:</p>
+                        <p id="rnombre">${nombre}</p>
+                    </div>
+                    <div class="dato__cargado dato__cargado--dos">
+                        <p>Apellido:</p>
+                        <p id="rapellido">${apellido}</p>
+                    </div>
+                    <div class="dato__cargado dato__cargado--tres">
+                        <p>D.N.I.:</p>
+                        <p id="rdni">${dni}</p>
+                    </div>
+                </div>
+                <div class="conceptos__cargados">
+                    <div class="concepto__fila nombre_concepto">
+                        <h5 class="fila__uno">Concepto</h5>
+                        <h5 class="fila__dos">Cantidad</h5>
+                        <h5 class="fila__tres">Saldo</h5>
+                    </div>
+                    <div class="concepto__fila basico">
+                        <p class="fila__uno">Sueldo básico</p>
+                        <p class="fila__dos">30</p>
+                        <p class="fila__tres" id="rbasico">${basico}</p>
+                    </div>
+                    <div class="concepto__fila faltados">
+                        <p class="fila__uno">Descuento</p>
+                        <p class="fila__dos"></p>
+                        <p class="fila__tres" id="rdescuento">${descuento}</p>
+                    </div>
+                    <div class="concepto__fila bono">
+                        <p class="fila__uno">Bonos / premios</p>
+                        <p class="fila__dos"></p>
+                        <p class="fila__tres" id="rbono">${bono}</p>
+                    </div>
+                    <div class="concepto__fila total">
+                        <h5 class="fila__uno">Total</h5>
+                        <p class="fila__dos"></p>
+                        <h5 class="fila__tres" id="rtotal">${total}</h5>
+                    </div>
+              </div>
+              </div>
+            `);
+            $('.titulo-recibo').show();
+            $('#recibo').show();
          /*creo mi obejto de datos para guardar en el storage despues*/
          let datos = {persona: new Persona(nombre, apellido, dni),
             mes: mes,
@@ -152,16 +189,64 @@ $(document).ready(function(){
             let total = (parseFloat(basico)- parseFloat(descuento)) + parseFloat(bono);
             
             if(usuario===dni && mesSelect===mes){
+            // $('#recibo').html(`
+            //     <h5>Mes: <h5>${mes}</h5></h5>
+            //     <p>Nombre: <p>${nombre}</p></p>
+            //     <p>Apellido: <p>${apellido}</p></p>
+            //     <p>Dni: <p>${dni}</p></p>
+            //     <p>Basico:$ <p>${basico}</p></p>
+            //     <p>Descuento: -$<p>${descuento}</p></p>
+            //     <p>Bono:+$<p>${bono}</p></p>
+            //     <p>Total:$ <p>${total}</p></p>
+            //     `);
             $('#recibo').html(`
-                <h5>Mes: <h5>${mes}</h5></h5>
-                <p>Nombre: <p>${nombre}</p></p>
-                <p>Apellido: <p>${apellido}</p></p>
-                <p>Dni: <p>${dni}</p></p>
-                <p>Basico:$ <p>${basico}</p></p>
-                <p>Descuento: -$<p>${descuento}</p></p>
-                <p>Bono:+$<p>${bono}</p></p>
-                <p>Total:$ <p>${total}</p></p>
-                `);
+            <div class="recibo__hecho">
+                <h4>${mes}</h4>
+                <div class="datos__cargados">
+                    <div class="dato__cargado dato__cargado--uno">
+                        <p>Nombre:</p>
+                        <p>${nombre}</p>
+                    </div>
+                    <div class="dato__cargado dato__cargado--dos">
+                        <p>Apellido:</p>
+                        <p>${apellido}</p>
+                    </div>
+                    <div class="dato__cargado dato__cargado--tres">
+                        <p>D.N.I.:</p>
+                        <p>${dni}</p>
+                    </div>
+                </div>
+                <div class="conceptos__cargados">
+                    <div class="concepto__fila nombre_concepto">
+                        <h5 class="fila__uno">Concepto</h5>
+                        <h5 class="fila__dos">Cantidad</h5>
+                        <h5 class="fila__tres">Saldo</h5>
+                    </div>
+                    <div class="concepto__fila basico">
+                        <p class="fila__uno">Sueldo básico</p>
+                        <p class="fila__dos">30</p>
+                        <p class="fila__tres">${basico}</p>
+                    </div>
+                    <div class="concepto__fila faltados">
+                        <p class="fila__uno">Descuento</p>
+                        <p class="fila__dos"></p>
+                        <p class="fila__tres">${descuento}</p>
+                    </div>
+                    <div class="concepto__fila bono">
+                        <p class="fila__uno">Bonos / premios</p>
+                        <p class="fila__dos"></p>
+                        <p class="fila__tres">${bono}</p>
+                    </div>
+                    <div class="concepto__fila total">
+                        <h5 class="fila__uno">Total</h5>
+                        <p class="fila__dos"></p>
+                        <h5 class="fila__tres">${total}</h5>
+                    </div>
+              </div>
+              </div>
+            `);
+            $('.titulo-recibo').show();
+            $('#recibo').show();
             // console.log(personas[i].persona._sueldos[i].salario);
             // console.log(personas.length)
         }else{
